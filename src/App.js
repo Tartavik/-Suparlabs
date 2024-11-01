@@ -1,22 +1,32 @@
+import React, { useEffect, useState } from "react";
+import RangeInput from "./components/RangeInput";
+import ToggleMode from "./components/ToggleMode";
+import ResetButton from "./components/ResetButton";
+import ShakeCounter from "./components/ShakeCounter";
 
-function App() {
+export default function App() {
+  const [shakeCount, setShakeCount] = useState(0);
+  const [shakeDelay, setShakeDelay] = useState(300);
+
+  useEffect(() => {
+    if (!window.DeviceMotionEvent) {
+      alert("Motion sensors are not available. The application requires access to the accelerometer.");
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p className="text-3xl font-bold underline">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-slate-800 dark:bg-white flex flex-col items-center h-screen flex-auto justify-center">
+      <ToggleMode />
+      <ShakeCounter
+        shakeCount={shakeCount}
+        setShakeCount={setShakeCount}
+        shakeDelay={shakeDelay}
+      />
+      <ResetButton setShakeCount={setShakeCount}/>
+      <RangeInput
+        shakeDelay={shakeDelay}
+        setShakeDelay={setShakeDelay}
+      />
     </div>
   );
 }
-
-export default App;
