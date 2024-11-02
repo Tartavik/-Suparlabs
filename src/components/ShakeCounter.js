@@ -15,7 +15,6 @@ const ShakeCounter = ({shakeCount, setShakeCount, shakeDelay}) => {
             const deltaZ = Math.abs(z - lastZ);
     
             const now = Date.now();
-            console.log(now);
     
             if ((deltaX > 15 || deltaY > 15 || deltaZ > 15) && now - last > shakeDelay) {
               setShakeCount((prevCount) => prevCount + 1);
