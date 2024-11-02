@@ -9,5 +9,11 @@ You can clone the repository and command `npm run start` it to run on your devic
 
 or
 
-hit [GitHub Pages](tartavik.github.io/superlabs/)
+hit [GitHub Pages](https://tartavik.github.io/superlabs/)
+
+### Description
+
+To catch shakes I used the built-in DeviceMotionEvent functionality and devicemotion event handler,
+then I compared the data of the received x, y, z axes with the previous ones.
+If the rotating effect was more than 15 degrees, it was a one shake.  
 
