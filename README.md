@@ -9,5 +9,5 @@ You can clone the repository and command `npm run start` it to run on your devic
 
 or
 
-hit gitHub Pages, link: tartavik.github.io/superlabs/
+hit [GitHub Pages](tartavik.github.io/superlabs/)
 
