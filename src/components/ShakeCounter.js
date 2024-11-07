@@ -34,8 +34,7 @@ const ShakeCounter = ({shakeCount, setShakeCount, shakeDelay}) => {
     
         return () => window.removeEventListener("devicemotion", handleMotion);
       
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);
+      }, [shakeDelay, setShakeCount]);
     
     return (
         <div className={`
